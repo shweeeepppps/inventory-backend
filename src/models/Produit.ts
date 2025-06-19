@@ -8,3 +8,15 @@ const produitSchema = new mongoose.Schema({
 });
 
 export default mongoose.model('Produit', produitSchema);
+export interface Categorie {
+  _id: string;
+  nom: string;
+}
+
+export interface Produit {
+  _id?: string;
+  nom: string;
+  prix: number;
+  stock: number;
+  categorie: Categorie; // pas string !
+}

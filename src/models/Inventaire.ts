@@ -1,10 +1,13 @@
-// src/models/Inventaire.ts
 import mongoose from 'mongoose';
 
 const inventaireSchema = new mongoose.Schema({
-  nom: { type: String, required: true },
-  quantite: { type: Number, required: true },
-  prix: { type: Number, required: true },
+  codeArticle: { type: String, required: true, unique: true },
+  designation: { type: String, required: true },
+  palette: { type: Number, required: true },
+  casier: { type: Number, required: true },
+  unite: { type: Number, required: true },
+  total: { type: Number, required: true },
+  imageUrl: { type: String }, // ✅ ajoute ceci
 });
 
 export default mongoose.model('Inventaire', inventaireSchema);

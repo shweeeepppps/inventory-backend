@@ -1,5 +1,7 @@
 import express from 'express';
 import { authenticate, authorize } from '../middleware/auth';
+
+
 import {
   getProduits,
   createProduit,
@@ -20,5 +22,8 @@ router.put('/:id', authenticate, authorize(['admin']), updateProduit);
 
 // ✅ Supprimer un produit (admin seulement)
 router.delete('/:id', authenticate, authorize(['admin']), deleteProduit);
+
+
+
 
 export default router;
